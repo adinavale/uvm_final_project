@@ -1,0 +1,8 @@
+Group 5
+
+SLLI -- Logical left shift
+SRLI -- logical right shift
+SRAI -- shit right arithmetic immediate
+SLL -- logical left shift
+SRL -- logical right shift
+SRA -- arithmetic right shift

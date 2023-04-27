@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+riscv64-linux-gnu-as -march=rv32i -o fun.o -a fun.s
+riscv64-linux-gnu-ld --format=elf32-littleriscv -T fun.ld fun.o
+riscv64-linux-gnu-objdump -D a.out
