@@ -2,6 +2,7 @@ class risc_test extends uvm_test;
     `uvm_component_utils(risc_test)
 
     risc_env env;
+    risc_sequence seq;
 
     function new(string name, uvm_component parent);
         super.new(name,parent);
@@ -11,11 +12,13 @@ class risc_test extends uvm_test;
     function void build_phase (uvm_phase phase);
         super.build_phase(phase);
         env = risc_env::type_id::create("env", this);
+        seq = risc_sequence::type_id::create("seq");
     endfunction : build_phase
 
     task run_phase(uvm_phase phase);
         phase.raise_objection(this);
-
+        seq.start(env.agent.sequencer);
+        uvm_top.print_topology();
         phase.drop_objection(this);
     endtask : run_phase
 endclass : risc_test

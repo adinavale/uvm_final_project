@@ -1,4 +1,4 @@
-class risc_sequencer extends uvm_sequencer#();
+class risc_sequencer extends uvm_sequencer#(risc_seq_item);
     `uvm_component_utils(risc_sequencer)
 
     //Constructor
