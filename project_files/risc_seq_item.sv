@@ -3,14 +3,14 @@ class risc_seq_item extends uvm_sequence_item;
     //I-type data
     rand reg [11:0] imm12;
     rand reg [4:0] rs1;
-    rand reg [2:0] funct3;
+    reg [2:0] funct3;
 
     //J-type data
     rand reg [19:0] imm20_10_1_11_19_12;
 
     //Shared I- and J-type data
     rand reg [4:0] rd;
-    rand reg [4:0] opcode5;
+    reg [4:0] opcode5;
     rand reg [1:0] ones;
 
     `uvm_object_utils_begin(risc_seq_item)
