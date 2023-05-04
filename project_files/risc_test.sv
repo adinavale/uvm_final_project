@@ -18,7 +18,13 @@ class risc_test extends uvm_test;
     task run_phase(uvm_phase phase);
         phase.raise_objection(this);
         seq.start(env.agent.sequencer);
-        uvm_top.print_topology();
+        //uvm_top.print_topology();
         phase.drop_objection(this);
     endtask : run_phase
+
+    function void end_of_elaboration_phase (uvm_phase phase);
+        super.end_of_elaboration_phase(phase);
+        uvm_top.print_topology();
+    endfunction : end_of_elaboration_phase
+
 endclass : risc_test
