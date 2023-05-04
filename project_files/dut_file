@@ -1,0 +1,8 @@
+`include "duts/dut51.svp"
+`include "duts/dut52.svp"
+`include "duts/dut53.svp"
+`include "duts/dut54.svp"
+`include "duts/dut55.svp"
+`include "duts/dut56.svp"
+`include "duts/dut57.svp"
+`include "duts/dut58.svp"

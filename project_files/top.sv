@@ -1,6 +1,7 @@
 import uvm_pkg::*;
 
 `include "pkg.sv"
+`include "dut_file"
 import proj_pkg::*;
 
 module top();

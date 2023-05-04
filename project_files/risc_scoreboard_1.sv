@@ -1,3 +1,5 @@
+`include "dut_file"
+
 class risc_scoreboard_1 extends uvm_scoreboard;
 
     `uvm_component_utils(risc_scoreboard_1)
