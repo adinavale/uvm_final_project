@@ -38,9 +38,19 @@ class risc_scoreboard_1 extends uvm_scoreboard;
             
             `uvm_info ("SCOREBOARD_1", "END OF ITEM\n", UVM_MEDIUM);
 
-            REMUL(1); //Drives reset to REMUL
-            WMEM(32'h8000_0000, 32'b0000000_00001_00010_101_00011_0000011);
-            REMUL(0);
+            //Perform reset
+            reset = 1;
+            REMUL();
+
+            //Give instruction
+            reset = 0;
+            mem[32'h8000_0000] = 32'b0000000_00001_10000_101_11100_0010011;
+            //todo: add SW instruction and read from memory
+            $display("read attempt: %d", REG(28));
+            REMUL();
+            $display("read attempt: %d", REG(28));
+
+            
             
         end
     endtask

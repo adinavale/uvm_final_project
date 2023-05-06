@@ -525,7 +525,7 @@ task CSRRCI();
     nextIns;
 endtask : CSRRCI
 
-task REMUL(reg reset);
+task REMUL();
     icnt+=1;
     finishedcode=0;
     if(reset) begin
@@ -574,7 +574,7 @@ task REMUL(reg reset);
                     3'b101: case(inst.R.funct7)
                         0: begin 
                             SRLI; 
-                            $display("Congrats you ran the instruction"); 
+                            $display("SRLI Instruction ran"); 
                             end
                         7'h20 : SRAI;
                         default:
