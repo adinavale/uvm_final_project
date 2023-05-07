@@ -1,7 +1,4 @@
-//`include "dut_file"
-
 class risc_scoreboard_1 extends uvm_scoreboard;
-
 
     `uvm_component_utils(risc_scoreboard_1)
      `include "remuldefs.svh"
@@ -42,16 +39,14 @@ class risc_scoreboard_1 extends uvm_scoreboard;
             reset = 1;
             REMUL();
 
-            //Give instruction
+            //Execute instruction
             reset = 0;
-            mem[32'h8000_0000] = 32'b0000000_00001_10000_101_11100_0010011;
-            //todo: add SW instruction and read from memory
-            $display("read attempt: %d", REG(28));
+            // mem[32'h8000_0000] = 32'b0000000_00001_10000_101_11100_0010011;
+            $display("%b", {req.imm12, req.rs1, req.funct3, req.rd, req.opcode5, req.ones});
+            mem[32'h8000_0000] = {req.imm12, req.rs1, req.funct3, req.rd, req.opcode5, req.ones};
+            $display("Register %d before REMUL: %d", req.rd, REG(req.rd));
             REMUL();
-            $display("read attempt: %d", REG(28));
-
-            
-            
+            $display("Register %d after REMUL: %d", req.rd, REG(req.rd));
         end
     endtask
 
