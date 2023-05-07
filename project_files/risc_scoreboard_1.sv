@@ -1,10 +1,11 @@
 class risc_scoreboard_1 extends uvm_scoreboard;
 
     `uvm_component_utils(risc_scoreboard_1)
-     `include "remuldefs.svh"
-     `include "remul.sv"
+    `include "remuldefs.svh"
+    `include "remul.sv"
 
     uvm_blocking_get_port #(risc_seq_item) m_get_port;
+    uvm_blocking_put_port #(risc_seq_item) sb_put_port;
 
     //Constructor
     function new (string name, uvm_component parent);
@@ -15,6 +16,7 @@ class risc_scoreboard_1 extends uvm_scoreboard;
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         m_get_port = new("m_get_port", this);
+        sb_put_port = new("sb_put_port", this);
     endfunction: build_phase
 
     virtual task run_phase(uvm_phase phase);
@@ -41,12 +43,14 @@ class risc_scoreboard_1 extends uvm_scoreboard;
 
             //Execute instruction
             reset = 0;
-            // mem[32'h8000_0000] = 32'b0000000_00001_10000_101_11100_0010011;
+            mem[32'h8000_0000] = 32'b0000000_00001_10000_101_11100_0010011;
             $display("%b", {req.imm12, req.rs1, req.funct3, req.rd, req.opcode5, req.ones});
-            mem[32'h8000_0000] = {req.imm12, req.rs1, req.funct3, req.rd, req.opcode5, req.ones};
-            $display("Register %d before REMUL: %d", req.rd, REG(req.rd));
+            // mem[32'h8000_0000] = {req.imm12, req.rs1, req.funct3, req.rd, req.opcode5, req.ones};
+            $display("SB_1 Register %d before REMUL: %d", req.rd, REG(req.rd));
             REMUL();
-            $display("Register %d after REMUL: %d", req.rd, REG(req.rd));
+            $display("SB_1 Register %d after REMUL: %d", req.rd, REG(req.rd));
+
+            sb_put_port.put(req);
         end
     endtask
 
