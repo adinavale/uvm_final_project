@@ -17,6 +17,7 @@ class risc_scoreboard_2 extends uvm_scoreboard;
     
     reg [4:0] actual_val;
     reg [4:0] expected_val;
+    string command;
 
     //Constructor
     function new (string name, uvm_component parent);
@@ -56,13 +57,14 @@ class risc_scoreboard_2 extends uvm_scoreboard;
             `uvm_info("SCOREBOARD_2_dut", $sformatf("Value stored in destination register REG[%0d] = %0d",req.rd,REG(req.rd)),UVM_MEDIUM)
 	    actual_val = REG(req.rd);
 	    expected_val = req.expected_val;
+	    command = req.command;
 	    check_data();
         end
     endtask : run_phase
 
     virtual task check_data();
     	if(actual_val != expected_val)
-		`uvm_info("SCOREBOARD_2", "********DATA MISMATCH********", UVM_MEDIUM)
-	else 	`uvm_info("SCOREBOARD_2", "********DATA MATCHED*********", UVM_MEDIUM);
+		`uvm_info("SCOREBOARD_2", $sformatf("********DATA MISMATCH FOR COMMAND %s********",command), UVM_MEDIUM)
+	else 	`uvm_info("SCOREBOARD_2", $sformatf("********DATA MATCHED FOR COMMAND %s*********",command), UVM_MEDIUM);
     endtask : check_data
 endclass : risc_scoreboard_2
