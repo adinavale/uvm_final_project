@@ -1,0 +1,13 @@
+./sv_uvm top.sv +define+RISC_0 (see scoreboard_2 for ifdef control)
+
+DUTS	|	SRLI		|	SLLI
+-------------------------------------------------------
+dut51		Data_matched		Data_mismatched
+dut52		Data_mismatched		Data_matched
+dut53		Data_matched		Data_matched
+dut54		Data_matched		Data_matched
+dut55		Data_matched		Data_matched
+dut56		Data_matched		Data_matched
+dut57		Data_matched		Data_matched
+dut58		Data_matched		Data_matched
+
