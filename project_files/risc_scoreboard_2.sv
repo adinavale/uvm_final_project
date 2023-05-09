@@ -48,12 +48,9 @@ class risc_scoreboard_2 extends uvm_scoreboard;
 
             //Execute instruction
             reset = 0;
-            //mem[32'h8000_0000] = 32'b0000000_00001_10000_101_11100_0010011;
-            // mem[32'h8000_0000] = {req.imm12, req.rs1, req.funct3, req.rd, req.opcode5, req.ones};
-            mem[32'h8000_0000] = {req.funct7,req.rs2,req.rs1,req.funct3,req.rd,req.opcode5};
+            mem[32'h8000_0000] = {req.funct7,req.rs2,req.rs1,req.funct3,req.rd,req.opcode5, req.ones};
             //$display("SB_2 Register %d before REMUL: %d", req.rd, REG(req.rd));
             REMUL();
-            //$display("SB_2 Register %d after REMUL: %d", req.rd, REG(req.rd));
             `uvm_info("SCOREBOARD_2_dut", $sformatf("Value stored in destination register REG[%0d] = %0d",req.rd,REG(req.rd)),UVM_MEDIUM)
 	    actual_val = REG(req.rd);
 	    expected_val = req.expected_val;
