@@ -18,7 +18,7 @@ class risc_driver extends uvm_driver #(risc_seq_item);
         forever begin
             seq_item_port.get_next_item(req);
                 `uvm_info ("DRIVER", "START OF ITEM FROM SEQUENCER", UVM_MEDIUM);
-                `uvm_info ("DRIVER", $sformatf("imm12: %x", req.imm12), UVM_MEDIUM);
+                `uvm_info ("DRIVER", $sformatf("PACKET RECEIVED IN DRIVER: %s", req.sprint()), UVM_MEDIUM);
                 `uvm_info ("DRIVER", "END OF ITEM\n", UVM_MEDIUM);
                 m_put_port.put(req);
             seq_item_port.item_done();

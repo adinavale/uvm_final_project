@@ -1,6 +1,6 @@
 class risc_seq_item extends uvm_sequence_item;
 
-	reg [6:0] opcode5;
+	reg [4:0] opcode5;
 	rand reg [4:0] rd;
 	reg [2:0] funct3;
 	rand reg [4:0] rs1;

@@ -37,8 +37,7 @@ class risc_scoreboard_1 extends uvm_scoreboard;
             REMUL();
             //Give instruction
             reset = 0;
-            //mem[32'h8000_0000] = 32'b0000000_00001_10000_101_11100_0010011;
-            mem[32'h8000_0000] = {req.funct7,req.rs2,req.rs1,req.funct3,req.rd,req.opcode5};
+            mem[32'h8000_0000] = {req.funct7,req.rs2,req.rs1,req.funct3,req.rd,req.opcode5,req.ones};
             //todo: add SW instruction and read from memory
             REMUL();
 	    `uvm_info("SCOREBOARD_1", $sformatf("Value stored in destination register REG[%0d] = %0d",req.rd,REG(req.rd)),UVM_MEDIUM)
