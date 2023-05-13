@@ -1,0 +1,8 @@
+./sv_uvm top.sv +define+RISC_0 | grep -i "**DATA" > report/srai_report_0.txt
+./sv_uvm top.sv +define+RISC_1 | grep -i "**DATA" > report/srai_report_1.txt
+./sv_uvm top.sv +define+RISC_2 | grep -i "**DATA" > report/srai_report_2.txt
+./sv_uvm top.sv +define+RISC_3 | grep -i "**DATA" > report/srai_report_3.txt
+./sv_uvm top.sv +define+RISC_4 | grep -i "**DATA" > report/srai_report_4.txt
+./sv_uvm top.sv +define+RISC_5 | grep -i "**DATA" > report/srai_report_5.txt
+./sv_uvm top.sv +define+RISC_6 | grep -i "**DATA" > report/srai_report_6.txt
+./sv_uvm top.sv +define+RISC_7 | grep -i "**DATA" > report/srai_report_7.txt

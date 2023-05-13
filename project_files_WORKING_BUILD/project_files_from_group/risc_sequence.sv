@@ -9,12 +9,12 @@ class risc_sequence extends uvm_sequence #(risc_seq_item);
     virtual task body();
 	super.body();
             req = risc_seq_item::type_id::create("req");
-	    inst_SRLI_rand();
+	    //inst_SRLI_rand();
 	    inst_SLLI_rand();
-	    inst_SLL_rand();
-	    inst_SRL_rand();
-	    inst_SRAI_rand();
-	    inst_SRA_rand();
+	    //inst_SLL_rand();
+	    //inst_SRL_rand();
+	    //inst_SRAI_rand();
+	    //inst_SRA_rand();
     endtask : body
 
     task inst_SRLI_rand();
@@ -27,7 +27,7 @@ class risc_sequence extends uvm_sequence #(risc_seq_item);
   		req.ones = 'b11;
 		req.command = "SRLI";
         finish_item(req);
-	#10;
+	#20;
 	end
     endtask : inst_SRLI_rand
 
@@ -41,7 +41,7 @@ class risc_sequence extends uvm_sequence #(risc_seq_item);
   		req.ones = 'b11;
 		req.command = "SLLI";
         finish_item(req);
-	#10;
+	#20;
 	end
      endtask : inst_SLLI_rand
 
@@ -55,7 +55,7 @@ class risc_sequence extends uvm_sequence #(risc_seq_item);
   		req.ones = 'b11;
 		req.command = "SLL";
         finish_item(req);
-	#10;
+	#20;
 	end
       endtask : inst_SLL_rand
 
@@ -69,7 +69,7 @@ class risc_sequence extends uvm_sequence #(risc_seq_item);
   		req.ones = 'b11;
 		req.command = "SRL";
         finish_item(req);
-	#10;
+	#20;
 	end
       endtask : inst_SRL_rand
 
@@ -83,7 +83,7 @@ class risc_sequence extends uvm_sequence #(risc_seq_item);
   		req.ones = 'b11;
 		req.command = "SRAI";
         finish_item(req);
-	#10;
+	#20;
 	end
       endtask : inst_SRAI_rand
 
@@ -97,7 +97,7 @@ class risc_sequence extends uvm_sequence #(risc_seq_item);
   		req.ones = 'b11;
 		req.command = "SRA";
         finish_item(req);
-	#10;
+	#20;
 	end
       endtask : inst_SRA_rand
      

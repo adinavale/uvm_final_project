@@ -7,11 +7,10 @@ class risc_seq_item extends uvm_sequence_item;
 	rand reg [4:0] rs2;
 	reg [6:0] funct7;
 	reg [1:0] ones;
-	reg [4:0] expected_val;
+	reg [31:0] expected_val;
 	string command;
 
 	constraint reg_val {rd != rs1;}
-	constraint shift_val {rs2 inside {[1:4]};}
 
     `uvm_object_utils_begin(risc_seq_item)
         `uvm_field_int(rs2 ,UVM_ALL_ON)

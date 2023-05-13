@@ -285,7 +285,7 @@
 0 /apps/synopsys/VCS_current/vcs/R-2020.12/etc/systemverilog/reg/sequences/uvm_reg_mem_hdl_paths_seq.svh
 29
 +acc
-+define+RISC_1
++define+RISC_7
 +define+UVM_OBJECT_MUST_HAVE_CONSTRUCTOR
 +incdir+/home/morris/uvm-1.2/src
 +vpi
@@ -317,10 +317,10 @@ top.sv
 cdk_dir=/apps/cadence/IC50/tools/dfII/local
 XRDP_SOCKET_PATH=/run/xrdp
 XRDP_SESSION=1
-XRDP_PULSE_SOURCE_SOCKET=xrdp_chansrv_audio_in_socket_25
-XRDP_PULSE_SINK_SOCKET=xrdp_chansrv_audio_out_socket_25
+XRDP_PULSE_SOURCE_SOCKET=xrdp_chansrv_audio_in_socket_36
+XRDP_PULSE_SINK_SOCKET=xrdp_chansrv_audio_out_socket_36
 XMODIFIERS=@im=ibus
-XDG_SESSION_ID=7274
+XDG_SESSION_ID=10937
 XDG_RUNTIME_DIR=/run/user/245577179
 XDG_MENU_PREFIX=gnome-
 XDG_DATA_DIRS=/home/016648840@SJSUAD.SJSU.EDU/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
@@ -346,10 +346,10 @@ STROOT=/apps/synopsys/TCAD
 STRELEASE=current
 STDB=/home/016648840@SJSUAD.SJSU.EDU/sentaurus
 SSH_AUTH_SOCK=/run/user/245577179/keyring/ssh
-SSH_AGENT_PID=28269
+SSH_AGENT_PID=7127
 SNPSLMS_LICENSE_FILE=27020@coe-ee-licsrv.sjsuad.sjsu.edu:C:LicensingSynopsysSynopsys_Key_Site_5009_Server_337521_snpslmd.lic
 SKIP_CDS_DIALOG=
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/28080,unix/unix:/tmp/.ICE-unix/28080
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/6939,unix/unix:/tmp/.ICE-unix/6939
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 QT_PLUGIN_PATH=/usr/lib64/kde4/plugins:/usr/lib/kde4/plugins
@@ -378,11 +378,11 @@ HSP_HOME=/apps/synopsys/HSPICE/hspice
 HOSTTYPE=x86_64-linux
 HISTCONTROL=ignoredups
 GROUP=domain users
-GNOME_TERMINAL_SERVICE=:1.98
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/53121f09_96ce_4342_95c8_7f081baaca5f
+GNOME_TERMINAL_SERVICE=:1.115
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/42f68179_a3bd_48f8_85dc_2efc53428bfc
 GNOME_SHELL_SESSION_MODE=classic
 GNOME_DESKTOP_SESSION_ID=this-is-deprecated
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-ipsdBW3tGc,guid=8e9f9f05ad99470271c8d21264599a64
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-DullSkpB37,guid=d32bec8693ec208fa9ef3125645fa6b4
 COLORTERM=truecolor
 CLS_CSD_COMPATIBILITY_LOCKING=NO
 CLS_CDSD_COMPATIBILITY_LOCKING=NO
@@ -395,20 +395,26 @@ CDS=/apps/cadence
 BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`_}
 ARCH=linux
 0
-157
+163
+1684009781 risc_test_sra_srai.sv
+1684009252 risc_test_sll_srl.sv
+1683993309 risc_test_srli_slli.sv
 1683417872 risc_test.sv
 1683606550 risc_env.sv
 1683606501 risc_agent.sv
-1683494138 ./duts/dut52.svp
-1683606710 risc_scoreboard_2.sv
+1683494242 ./duts/dut58.svp
+1684004765 risc_scoreboard_2.sv
 1683491351 remul.sv
 1681947007 remuldefs.svh
-1683606651 risc_scoreboard_1.sv
+1683997831 risc_scoreboard_1.sv
 1683606534 risc_driver.sv
 1683414225 risc_sequencer.sv
-1683606393 risc_sequence.sv
-1683595104 risc_seq_item.sv
-1683491899 pkg.sv
+1684010060 risc_sequence_sra_srai.sv
+1684009445 risc_sequence_sll_srl.sv
+1684006628 risc_sequence_srli_slli.sv
+1684004535 risc_sequence.sv
+1684008275 risc_seq_item.sv
+1684009824 pkg.sv
 1402647219 /home/morris/uvm-1.2/src/reg/sequences/uvm_reg_mem_hdl_paths_seq.svh
 1402647219 /home/morris/uvm-1.2/src/reg/sequences/uvm_reg_mem_built_in_seq.svh
 1402647219 /home/morris/uvm-1.2/src/reg/sequences/uvm_reg_mem_shared_access_seq.svh
@@ -551,7 +557,7 @@ ARCH=linux
 1402647219 /home/morris/uvm-1.2/src/macros/uvm_version_defines.svh
 1402647219 /home/morris/uvm-1.2/src/uvm_macros.svh
 1402647219 /home/morris/uvm-1.2/src/uvm_pkg.sv
-1683415630 top.sv
+1684009845 top.sv
 1402647219 /home/morris/uvm-1.2/src/uvm.sv
 5
 1402647219 /home/morris/uvm-1.2/src/dpi/uvm_dpi.cc
@@ -559,5 +565,5 @@ ARCH=linux
 1607401344 /apps/synopsys/VCS_current/vcs/R-2020.12/linux/lib/liberrorinf.so
 1607401192 /apps/synopsys/VCS_current/vcs/R-2020.12/linux/lib/libsnpsmalloc.so
 1607401539 /apps/synopsys/VCS_current/vcs/R-2020.12/linux/lib/libvfs.so
-1683610625 simv.daidir
+1684010131 simv.daidir
 -1 partitionlib

@@ -38,8 +38,8 @@ class risc_scoreboard_1 extends uvm_scoreboard;
 	    
 	    `uvm_info("SCOREBOARD_1", $sformatf("Value stored in destination register REG[%0d] = %0d",req.rd,REG(req.rd)),UVM_MEDIUM)
 
-            req.expected_val = REG(req.rd);
-
+            req.expected_val = REG(req.rd); #5;
+	    
             sb_put_port.put(req);
         end
     endtask
